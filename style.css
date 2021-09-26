@@ -9,6 +9,6 @@ svg.dice:hover{
   transform: rotate(45deg); /* Équivalent à rotateZ(45deg) */
   background-color: rgb(45, 137, 160);
 }
-.dice-roll {
+#dice-roll {
   cursor: pointer;
 }

@@ -15,8 +15,8 @@ function result_Dice(result){
     round += result;
     console.log(
     `Votre lancer de dé est de : ${result},
-    votre round est de: ${round},
-    continuez ou envoyer vos points sur le score global !
+      Votre round est de: ${round},
+      continuez ou envoyer vos points sur le score global !
     
     `);
   }else{
@@ -33,5 +33,6 @@ function result_Dice(result){
 
 
 result_Dice();
+
 
 
