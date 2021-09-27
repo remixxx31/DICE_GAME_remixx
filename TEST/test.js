@@ -8,7 +8,6 @@ function getRandomInt(min, max) {
 
 function result_Dice(result){
   let round = 0;
-  // result = null;
   do{
     result= getRandomInt(1,7);
     if(result != 1){
