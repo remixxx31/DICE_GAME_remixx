@@ -43,9 +43,9 @@ function roll_dice () {
   console.log("ok")
   result = get_random_int(1,7);
   if(result != 1){
-      notOne();
+      not_one();
   }else{
-      isOne();
+      is_One();
   }
 }
 
@@ -98,6 +98,5 @@ function is_victory(global) {
   }
 }
 
-game_start();  
-   
+
 
