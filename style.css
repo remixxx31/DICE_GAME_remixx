@@ -2,6 +2,12 @@
 html{
   font-family: Lato;
 }
+#affichage-dice{
+  background-color:#DE4453;
+  border-radius: 10%;
+  border:solid 2px black;
+  max-width: 6.5vw;
+}
 
 #player1 #player2{
   color:hsl(16, 100%, 50%);
