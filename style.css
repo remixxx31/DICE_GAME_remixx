@@ -1,15 +1,20 @@
 
-html{
-  font-family: Lato;
+
+ /* <!-- import de la police Lato --> */
+
+body{
+font-family: 'Lato', sans-serif!important;
 }
+
 #affichage-dice{
   background-color:#DE4453;
   border-radius: 10%;
   border:solid 2px black;
-  max-width: 6.5vw;
+  font-size: 5rem;
+  /* max-width: 7.5vw; */
 }
 
-#player1 #player2{
+/* #player1 #player2{
   color:hsl(16, 100%, 50%);
 }
 #parentplay1{
@@ -17,7 +22,7 @@ html{
 }
 #parentplay2{
   background-color: #f3f4cd;
-}
+} */
 #dice-roll {
   cursor: pointer;
 }
@@ -46,4 +51,5 @@ svg.dice:hover{
   background-color:hsl(17, 64%, 88%);
   border:solid black 1px;
   color:rgb(51, 6, 6);
+  padding-top: 0.7vh;
 }
