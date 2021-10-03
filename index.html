@@ -28,34 +28,39 @@
           <div
             class="d-flex py-md-5 py-1 justify-content-center number display-4 text-center text-danger rounded mx-auto align-items-center"
             id="scoreplayer1">0</div>
-          <div class="py-md-5 py-1    fw-bold">ROUND</div>
+          <div class="py-md-5 py-1 fw-bold">ROUND</div>
           <div class="display-6 py-md-5 py-1    text-danger fst-italic" id="roundPlayer1">round is coming ...</div>
         </div>
+        <!-- Fin colonne joueur 1 -->
 <!-- composants bouttons -->
         <div class="order-2 order-md-3 order-lg-2 col-12 col-lg-4 text-center">
           <div class="row justify-content-center">
-            <div class="col-12 col-md-9 mx-auto justify-content-center">
+            <div class="col-12 col-md-9 mx-auto">
               
-              <div class="row-cols-auto row justify-content-center  px-md-5 py-md-5 py-1 h-25">
+              <div class="d-flex container-fluid justify-content-center btn-group">
+                <div class="row  mx-auto">
+              <div class="col col-md-4 mx-auto col-lg-8  px-md-3 text-center py-1  py-md-5">
                 <button type="button" id="new-game"
-                  class="btn btn-dark btn-sm rounded col-3 col-lg-7 text-white text-nowrap text-center"
+                  class="btn btn-dark btn-block  rounded  text-white text-nowrap text-center"
                   title="Lancer une Nouvelle partie">New game</button>
 
               </div>
 
-              <div class="row-cols-auto justify-content-center  h-25 py-md-5 py-1 px-md-5">
-                <button type="button" id="dice-roll" class="btn btn-dark btn-sm  rounded  col-3 col-lg-7 text-center text-white"
+              <div class="col col-md-4 mx-auto col-lg-8 py-1 py-md-5 px-md-3 text-center ">
+                <button type="button" id="dice-roll" class="btn btn-dark btn-block  rounded text-nowrap  text-center text-white"
                   title="Lancer le dé!">Role-Dice</button>
               </div>
               
-              <div class="row-cols-auto justify-content-center  h-25 px-md-5 py-md-5 py-auto">
-                <button type="button" id="id-hold" class="rounded btn btn-dark btn-sm text-center col-3 col-lg-7 text-white"
+              <div class="col col-md-4 mx-auto col-lg-8  px-md-3 text-center py-1  py-md-5">
+                <button type="button" id="id-hold" class="rounded btn btn-dark btn-block  text-center  text-white"
                   title="Envoyez les points sur le GLOBAL !">Hold</button>
 
               </div>
+            </div>
+            </div>
 
-              <div class="row container-fluid justify-content-center  py-3 py-md-5 px-md-5 mx-auto">
-                <button type="button" class="text-center display-5 rounded btn btn-sm btn-dark col-4 col-lg-6  text-white"
+              <div class="row container-fluid justify-content-center  py-3 py-md-3 px-md-5 text-center  mx-auto">
+                <button type="button" class="dice text-center mx-auto display-3 rounded btn btn-block  btn-dark col-4 col-lg-6  text-white"
                   id="affichage-dice" title="voici le résultat du dé!">0</button>
 
               </div>
@@ -64,7 +69,8 @@
         </div>
 <!-- Fin composants bouttons -->
 
-        <div class="order-3 order-md-2 col-12 col-md-6 col-lg-4 text-center py-md-5 py-4">
+<!-- colonne joueur 2 -->
+        <div class="order-3 order-md-2 col-12 col-md-6 col-lg-4 text-center py-md-5 py-auto">
           <div class="h2 py-md-5 py-5 text-danger " id="player2">Player 2</div>
           <div class="display-4 number mx-auto py-md-5 py-1    text-danger rounded d-flex justify-content-center align-items-center"
             id="scoreplayer2">0
@@ -72,7 +78,7 @@
           <div class="py-md-5 py-1    fw-bold">ROUND</div>
           <div class="display-6 py-md-5 py-1    text-danger fst-italic" id="roundPlayer2">round is coming ...</div>
         </div>
-        <!-- colonne joueur 2 -->
+        <!-- fin colonne joueur 2 -->
 
       </div>
     </div>

@@ -17,101 +17,65 @@ holdBtn.addEventListener('click',hold)
 
 
 function bold($id){
-  return $id.classList.add("fw-bold");
   console.log("titre en gras");
-} 
-
+  return $id.classList.add("fw-bold","text-dark","text-uppercase");
+}
    function not_bold($id){
-  return $id.classList.remove("fw-bold");
-  console.log("titre police normale");
+     console.log("titre police normale");
+  return $id.classList.remove("fw-bold","text-dark","text-uppercase");
 }
 
 
-// function getCss(){
-  // while(game.win !== 1 || ) 
-  //   {
-    //     if(game.turn === 0){
-      //       player1.title = bold(playerTitle1)
-      //       player2.title = not_bold(playerTitle2)
-      //     }else{
-        //       player2.title = bold(playerTitle2)
-        //       player1.title = not_bold(playerTitle1)
-        //     }
-        //   }
-        // }
-        
-        
+
+function bold_turn(){
+  if (game.turn === 0){
+    bold(playerTitle1)
+    not_bold(playerTitle2)
+  } else if(game.turn === 1){
+    bold(playerTitle2)
+    not_bold(playerTitle1)
+  } else {
+    not_bold(playerTitle1)
+    not_bold(playerTitle2)
+  }
+}
         // initialisation des classes
         function game_start() {
           //initialisation des différentes classes
-          console.log("nouvelle partie")
-          
+          console.log("nouvelle partie");
           
           game = {
             turn: get_random_int(0, 2),
             win: null,
             result: null,
-            bold: bold_turn(),
+            // bold: bold_turn(),
           }
   
           player1 = {
             round:  null,
             global: null,
             result: null,
-            title: not_bold(playerTitle1),
+            winner: null,
           }
           
           player2 = {
             round:  null,
             global: null,
             result: null,
-            title: not_bold(playerTitle2),
           }
           console.dir(game)
           console.dir(player1)
           console.dir(player2)
           // let who = (game.turn === 0)? "Player 1 are you ready ?" : "Player 2 are you ready ?";
           // window.alert(`This is a new game!  ${who} Click ON ROLL-DICE !`)
-          console.log()
+          bold_turn()
           console.log("Cliquez sur roll-Dice")
         }
+
         
-        function bold_turn(){
-          if (game.turn === 0){
-            bold(player1.title)
-            not_bold(player2.title)
-          } else if(game.turn === 1){
-            bold(player2.title)
-            not_bold(player1.title)
-          } else {
-            not_bold(player1.title)
-            not_bold(player2.title)
-          }
-        }
-        // function indicate_turn(){
-          //   let bold1=playerTitle1.classList.add("fw-bold");
-  //   let notbold1=playerTitle1.classList.remove("fw-bold");
-  //   let bold2=playerTitle2.classList.add("fw-bold");
-  //   let notbold2=playerTitle2.classList.remove("fw-bold");
-  
-  //   if(game.turn === 0 && game.result !== 1 ){
-    //    return bold1 && notbold2;
-    //   }else if(game.turn ===1 && game.result !== 1 ){
-      //     return bold2 && notbold1;
-      //     console.log("texte en gras c'est au joueur 2");
-      // } elseif(){
         
-        // }
-        // else{
-          //     alert("Cliquez sur New game");
-          //     console.log("ce n'est le tour de personne");
-          // }
-          // }
-          // function add_listener() {
-            //   const diceRoll = document.querySelector("#dice-roll");
-            
-            //   diceRoll.addEventListener("click", console.log("ça marche"));
-            // }
+
+   
             
             // fonction qui me renvoit un nb aléatoire entre les bornes précisées
             function get_random_int(min, max) {
@@ -122,7 +86,7 @@ function bold($id){
             
             //fonction du lancer de dé
             function roll_dice(){
-              
+              bold_turn()
               console.log("le dé est lancé")
               
               var result = get_random_int(1,7);
@@ -136,6 +100,7 @@ function bold($id){
               }else{
                 console.log("dé = 1")
                 game.result= result;
+                bold_turn();
                 is_one();
               }
               
@@ -143,6 +108,7 @@ function bold($id){
             
             //fonction résultat du dé à 1
             function is_one() {
+              bold_turn()
               if(game.turn === 0) {
                 console.log("tour du joueur 2")
                 player1.round = 0;
@@ -176,6 +142,9 @@ function bold($id){
             
             //fonction envoi du score sur score global
             function hold() {
+              bold_turn();
+              let winner = "You win"
+              let looser = "Sorry baby, take your revenge !"
               console.log("envoi du score round!")
               // mess = console.log("C'est le" );
               if(game.turn === 0){
@@ -186,6 +155,8 @@ function bold($id){
                 rp1.textContent =player1.round;
                 if(is_victory(player1.global)){
                   game.win = 0;
+                  rp1.textContent = winner;
+                  rp2.textContent = looser;
                 }else{
                   game.turn = 1;
                 }
@@ -197,6 +168,9 @@ function bold($id){
                 rp2.textContent =player2.round;
                 if(is_victory(player2.global)){
                   game.win = 1;
+                  rp2.textContent = winner;
+                  rp1.textContent = looser;
+                  
       }else{
         game.turn = 0;
       }
@@ -216,4 +190,3 @@ function bold($id){
   
  
   game_start();
-  
