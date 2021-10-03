@@ -85,7 +85,7 @@ function bold_turn(){
             
             //fonction du lancer de dé
             function roll_dice(){
-              // bold_turn()
+              bold_turn()
               console.log("le dé est lancé")
               
               var result = get_random_int(1,7);
@@ -107,7 +107,7 @@ function bold_turn(){
             
             //fonction résultat du dé à 1
             function is_one() {
-              // bold_turn()
+              bold_turn();
               if(game.turn === 0) {
                 console.log("tour du joueur 2")
                 player1.round = 0;
@@ -181,7 +181,7 @@ function bold_turn(){
   //fonction qui évalue si il y a un vainqueur
   function is_victory(global){
     if(player1.global >= 100 || player2.global >= 100){
-      bold_turn()
+      bold_turn();
       return true;
     } else {
       return false;
