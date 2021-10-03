@@ -9,7 +9,7 @@ const playerTitle1 = document.querySelector("#player1");
 const playerTitle2 = document.querySelector("#player2");
 const scoreP1 = document.querySelector("#scoreplayer1");
 const scoreP2 = document.querySelector("#scoreplayer2");
- 
+const seeDice=document.querySelector('#affichage-dice');
 
 diceBtn.addEventListener('click',roll_dice)
 newBtn.addEventListener('click',game_start)
@@ -41,9 +41,11 @@ function bold_turn(){
 }
         // initialisation des classes
         function game_start() {
+          scoreP1.textContent = null
+          scoreP2.textContent= null
+
           //initialisation des différentes classes
           console.log("nouvelle partie");
-          
           game = {
             turn: get_random_int(0, 2),
             win: null,
@@ -51,7 +53,7 @@ function bold_turn(){
           }
   
           player1 = {
-            round:  null,
+            round: null,
             global: null,
             result: null,
           }
@@ -70,11 +72,6 @@ function bold_turn(){
           console.log("Cliquez sur roll-Dice")
         }
 
-        
-        
-
-   
-            
             // fonction qui me renvoit un nb aléatoire entre les bornes précisées
             function get_random_int(min, max) {
               min = Math.ceil(min);
@@ -89,7 +86,7 @@ function bold_turn(){
               
               var result = get_random_int(1,7);
               // inscription du nombre obtenu dans le bon élèment
-              document.querySelector('#affichage-dice').textContent = result;
+              seeDice.textContent = result;
               // console.log(game.turn)
               if(result !== 1){
                 console.log("dé > 1")
