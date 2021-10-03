@@ -14,15 +14,7 @@ font-family: 'Lato', sans-serif!important;
   /* max-width: 7.5vw; */
 }
 
-/* #player1 #player2{
-  color:hsl(16, 100%, 50%);
-}
-#parentplay1{
-  background-color: #e0e0e0;
-}
-#parentplay2{
-  background-color: #f3f4cd;
-} */
+
 #dice-roll {
   cursor: pointer;
 }
@@ -30,20 +22,15 @@ body{
   background-color: #F4F6F6;
 }
 .dice{
+  box-sizing: border-box;
   opacity: 0.8;
   height: 100px;
   width: 100px;
-  min-width:68px;
-  max-width: 20%;
-  max-height:20%;
   /* border-radius: 50%; */
   margin:auto;
   /* background-color: ; */
 }
-svg.dice:hover{
-  transform: rotate(45deg); /* Équivalent à rotateZ(45deg) */
-  /* z-index:; */
-}
+
 
 .number{
   box-sizing: border-box;
