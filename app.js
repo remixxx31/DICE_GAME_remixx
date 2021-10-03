@@ -28,10 +28,10 @@ function bold($id){
 
 
 function bold_turn(){
-  if (game.turn === 0){
+  if (game.turn === 0 || player2.result === 1){
     bold(playerTitle1)
     not_bold(playerTitle2)
-  } else if(game.turn === 1){
+  } else if(game.turn === 1 || player1.result === 1){
     bold(playerTitle2)
     not_bold(playerTitle1)
   } else {
@@ -48,7 +48,6 @@ function bold_turn(){
             turn: get_random_int(0, 2),
             win: null,
             result: null,
-            // bold: bold_turn(),
           }
   
           player1 = {
@@ -86,7 +85,7 @@ function bold_turn(){
             
             //fonction du lancer de dé
             function roll_dice(){
-              bold_turn()
+              // bold_turn()
               console.log("le dé est lancé")
               
               var result = get_random_int(1,7);
@@ -99,8 +98,8 @@ function bold_turn(){
                 not_one();
               }else{
                 console.log("dé = 1")
-                game.result= result;
                 bold_turn();
+                game.result= result;
                 is_one();
               }
               
@@ -108,7 +107,7 @@ function bold_turn(){
             
             //fonction résultat du dé à 1
             function is_one() {
-              bold_turn()
+              // bold_turn()
               if(game.turn === 0) {
                 console.log("tour du joueur 2")
                 player1.round = 0;
@@ -175,12 +174,14 @@ function bold_turn(){
         game.turn = 0;
       }
     }
+    bold_turn();
   }
   
   
   //fonction qui évalue si il y a un vainqueur
   function is_victory(global){
     if(player1.global >= 100 || player2.global >= 100){
+      bold_turn()
       return true;
     } else {
       return false;
