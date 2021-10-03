@@ -54,7 +54,6 @@ function bold_turn(){
             round:  null,
             global: null,
             result: null,
-            winner: null,
           }
           
           player2 = {
